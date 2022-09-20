@@ -128,7 +128,7 @@ button:focus {
   background-color: #77afbf;
 }
 
-.container {
+.container, .container-wide {
   max-width: 1230px;
   width: 100%;
   padding-left: 15px;
@@ -140,7 +140,7 @@ button:focus {
   position: relative;
   font-weight: bold;
   width: 100%;
-  background-color: #0f1012;
+  background-color: #1e0b29;
 }
 .header .logo-back {
   background-color: #8e9ec4;
@@ -263,7 +263,7 @@ button:focus {
 }
 
 .black {
-  background-color: #0f1012;
+  background-color: #1e0b29;
 }
 
 .row {
@@ -283,7 +283,7 @@ button:focus {
 .form .inputs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .form .input {
@@ -294,11 +294,17 @@ button:focus {
   color: black;
   margin-top: 30px;
 }
+.form .input:focus {
+  border-bottom-color: #b382cd;
+}
 
 .form .input.fio,
 .form .input.tel {
-  width: 315px;
-  margin-right: 15px;
+  width: 280px;
+}
+
+.form .input.fio {
+  margin-right: 90px;
 }
 
 .form .input.wide {
@@ -342,7 +348,7 @@ button:focus {
 
 .footer {
   padding: 0px 0 30px 0;
-  background-color: #0f1012;
+  background-color: #1e0b29;
   color: white;
   font-weight: bold;
 }
@@ -366,6 +372,7 @@ button:focus {
 .footer .mail {
   color: #97a5c8;
   position: relative;
+  font-size: 21px;
 }
 .footer .mail::before {
   content: url(../img/email.png);
@@ -376,6 +383,7 @@ button:focus {
 }
 .footer .mobile {
   position: relative;
+  font-size: 21px;
 }
 .footer .mobile::before {
   content: url(../img/mobile.png);
@@ -403,6 +411,7 @@ button:focus {
   max-width: 650px;
 }
 .intro__info .text-invest {
+  font-size: 26px;
   margin-top: 56px;
   margin-bottom: 86px;
 }
@@ -634,6 +643,7 @@ button:focus {
   padding: 16px 0;
   width: 185px;
   display: inline-block;
+  font-weight: 400;
 }
 .game-shedule__table td {
   display: inline-block;
@@ -713,7 +723,7 @@ button:focus {
   flex-direction: column;
   justify-content: center;
   flex: 0 0 40%;
-  margin: 10px 40px;
+  margin: 10px 30px;
 }
 .reviews__img .img-wrapper {
   min-height: 200px;
@@ -814,6 +824,64 @@ button:focus {
   margin-right: -5px;
 }
 
+.leading {
+  padding-bottom: 120px;
+}
+.leading__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  grid-auto-rows: 370px;
+  grid-gap: 20px;
+  justify-content: center;
+}
+.leading__grid .item {
+  position: relative;
+  overflow: hidden;
+  background-color: #e2e2e2;
+  grid-row: span 1;
+}
+.leading__grid .item .img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.leading__grid .item__body {
+  background: rgba(30, 11, 41, 0.8);
+  width: 100%;
+  position: absolute;
+  padding: 18px;
+  text-align: center;
+  color: white;
+  top: 100%;
+  transform: translateY(-55px);
+  transition: transform 0.2s ease;
+}
+.leading__grid .item .title {
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.leading__grid .item .title::after {
+  content: "";
+  display: block;
+  width: 95px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50px);
+  background-color: white;
+}
+.leading__grid .item .text {
+  font-size: 17px;
+}
+.leading__grid .item:hover .item__body {
+  transform: translateY(-100%);
+}
+
 /*RESPONSIVE*/
 @media (max-width: 1400px) {
   .intro__money .img {
@@ -870,7 +938,7 @@ button:focus {
     position: fixed;
     height: 100%;
     width: 290px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     top: 0;
     right: -100%;
     z-index: 100;
@@ -902,6 +970,9 @@ button:focus {
   .games__statistic {
     justify-content: center;
   }
+  .leading__grid {
+    grid-auto-rows: 320px;
+  }
 }
 @media (max-width: 768px) {
   .container {
@@ -923,6 +994,7 @@ button:focus {
   }
   .reviews__img {
     flex: 0 0 100%;
+    margin-left: 60px;
   }
   .reviews__item {
     flex-direction: column;
@@ -932,18 +1004,21 @@ button:focus {
     margin-top: 10px;
     margin-right: 0;
   }
+  .reviews__content .type {
+    margin-bottom: 25px;
+  }
   .reviews .section-title {
     margin-bottom: 30px;
   }
   .owl-carousel .owl-nav button.owl-prev {
-    left: 0px;
-    top: 105%;
+    left: -10px;
+    top: 45%;
     height: 40px;
     width: 40px;
   }
   .owl-carousel .owl-nav button.owl-next {
-    right: 0px;
-    top: 105%;
+    right: -10px;
+    top: 45%;
     height: 40px;
     width: 40px;
   }
@@ -957,13 +1032,23 @@ button:focus {
   .footer__list .item.last, .footer__list .item.first {
     text-align: center;
   }
+  .form .input.fio {
+    margin-right: 0;
+  }
+  .form .inputs .input {
+    width: 100%;
+  }
 }
 @media (max-width: 576px) {
+  h3 {
+    font-size: 24px;
+  }
   .logo-back {
     display: none;
   }
   .joint-project h3 {
     text-align: center;
+    font-size: 24px;
   }
   .joint-project .company {
     text-align: center;
@@ -972,5 +1057,29 @@ button:focus {
   }
   .header .login {
     margin-left: 30px;
+  }
+  p {
+    font-size: 18px !important;
+  }
+  .prizes__list .item {
+    flex: 100%;
+  }
+  .reviews__img {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .leading__grid {
+    grid-template-columns: 300px;
+  }
+}
+@media (max-width: 310px) {
+  .header__top {
+    flex-wrap: wrap;
+  }
+  .header .login {
+    margin-left: 0;
+  }
+  .leading__grid {
+    grid-template-columns: 100%;
   }
 }

@@ -17,6 +17,7 @@
         
 
         .text-invest{
+            font-size: 26px;
             margin-top: 56px;
             margin-bottom: 86px;
         }
@@ -283,6 +284,7 @@
             padding: 16px 0;
             width: 185px;          
             display: inline-block;
+            font-weight: 400;
         }
 
         td{
@@ -375,7 +377,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center; flex: 0 0 40%;
-        margin: 10px 40px;
+        margin: 10px 30px;
         .img-wrapper{
             min-height: 200px;           
             position: relative;
@@ -484,6 +486,75 @@
     margin-right: -5px;
 }
 
+.leading{
+    padding-bottom: 120px;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 280px);
+        grid-auto-rows: 370px;
+        grid-gap: 20px;
+        justify-content: center;
+        
+
+        .item{
+            position: relative;
+            overflow: hidden;
+            background-color: #e2e2e2;
+            grid-row: span 1;
+            
+            .img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__body{
+                background: rgba(#1e0b29, 0.8);
+                width: 100%;
+                position: absolute;
+                padding: 18px;
+                text-align: center;
+                color: white;
+                top: 100%;
+                transform: translateY(-55px);
+                transition: transform 0.2s ease;
+            }
+
+            .title{
+                font-weight: bold;
+                font-size: 18px;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    display: block;
+                    width: 95px;
+                    height: 2px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50px);
+                    background-color: white;
+
+
+                }
+            }
+            .text{
+                font-size: 17px;
+            }
+
+            &:hover{
+                .item__body{
+                    transform: translateY(-100%);
+                }
+            }
+        }
+
+
+    }
+}
 
 /*RESPONSIVE*/
 @media(max-width: 1400px)
@@ -566,7 +637,7 @@
         position: fixed;
         height: 100%;
         width: 290px;
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         top: 0;
         right: -100%;
         z-index: 100;
@@ -604,6 +675,10 @@
     .games__statistic{
         justify-content: center;
     }
+
+    .leading__grid{
+        grid-auto-rows: 320px ;
+    }
 }
 @media(max-width: 768px)
 {
@@ -628,6 +703,12 @@
     }
     .reviews__img{
         flex: 0 0 100%;
+        margin-left: 60px;
+
+        img{
+
+            //height: 250px;
+        }
     }
     .reviews__item{
         flex-direction: column;
@@ -636,21 +717,33 @@
         text-align: center;
         margin-top: 10px;
         margin-right: 0;
+
+        .type{
+            margin-bottom: 25px;
+        }
+    }
+    .reviews__carousel button.owl-prev,
+    .reviews__carousel button.owl-next{
+        //top: 300px !important;
     }
     .reviews .section-title{
         margin-bottom: 30px;
     }
 
+    .leading{
+
+    }
+
     .owl-carousel .owl-nav button.owl-prev{
-        left: 0px;
-        top: 105%;
+        left: -10px;
+        top: 45%;
         height: 40px;
         width: 40px;
     }
     
     .owl-carousel .owl-nav button.owl-next{
-        right: 0px;
-        top: 105%;
+        right: -10px;
+        top: 45%;
         height: 40px;
         width: 40px;
     }
@@ -668,14 +761,25 @@
             }
         }
     }
+
+    .form .input.fio{
+        margin-right: 0;
+    }
+    .form .inputs .input{
+        width: 100%;
+    }
 }
 
 @media(max-width: 576px){
+    h3{
+        font-size: 24px;
+    }
     .logo-back{
         display: none;
     }
     .joint-project h3{
         text-align: center;
+        font-size: 24px;
     }
     .joint-project .company{
         text-align: center;
@@ -685,5 +789,35 @@
 
     .header .login{
         margin-left: 30px;
+    }
+
+    p{
+        font-size: 18px !important;
+    }
+
+    .prizes__list .item{
+        flex: 100%;
+    }
+
+    .reviews__img{
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+
+    .leading__grid{
+        grid-template-columns: 300px;
+    }
+}
+
+@media (max-width: 310px)
+{
+    .header__top{
+        flex-wrap: wrap;
+    }
+    .header .login{
+        margin-left: 0;
+    }
+    .leading__grid{
+        grid-template-columns: 100%;
     }
 }
