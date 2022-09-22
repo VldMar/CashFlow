@@ -53,8 +53,20 @@
         font-weight: 400;
     }
 
+    .prizes{
+        &__list{
+
+            margin: 45px 0;
+        }
+        .title{
+            font-size: 81px;
+
+            &::before, &::after{
+                top: 10px;
+            }
+        }
+    }
     .prizes__list{
-        margin: 45px 0;
     }
 }
 
@@ -92,7 +104,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding-top: 25px;
+    padding-bottom: 55px;
     flex-direction: column;
     &__list{
         display: flex;
@@ -106,11 +119,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 40px;
             
         }
         .title{
-            font-size: 81px;
+            font-size: 64px;
             font-weight: 700;
             position: relative;
             color: #898989;   
@@ -121,7 +133,7 @@
                 display: block;
                 position: absolute;
                 left: -50px;                
-                top: 10px;
+                top: 0px;
     
             }
             &::after{
@@ -129,7 +141,7 @@
                 display: block;
                 position: absolute;
                 right: -50px;
-                top: 10px;
+                top: 0px;
             }
     
         }
@@ -164,6 +176,7 @@
 
 .games{
     padding: 0 80px;
+    padding-bottom: 90px;
     &__statistic{
         display: flex;
         flex-wrap: wrap;
@@ -180,6 +193,7 @@
             color: $dark-gray;
             font-size: 60px;
             font-weight: 700;
+            margin: 0;
         }
 
         .subtitle{
@@ -189,7 +203,6 @@
     }
 
     &__list{
-        padding:0 0 90px 0;
 
         .item{
             text-align: center;
@@ -215,10 +228,6 @@
             color: white;
             font-size: 14px;
             margin: 0px auto 13px auto;
-        }
-
-        .carousel{
-            padding-top: 70px;
         }
 
         .owl-dots{
@@ -247,10 +256,13 @@
             background-color: red;
         }
     }
-
     
     &__carousel{
-        margin: 50px 0;
+        margin-top: 50px;
+    }
+
+    .game-shedule__table{
+        margin-bottom: 0;
     }
 }
 
@@ -262,7 +274,6 @@
 
 
 .game-shedule{
-    padding-top: 60px;
     &__table{
         overflow-x: auto;
         white-space: nowrap;
@@ -358,9 +369,10 @@
 }
 
 .reviews{
-    padding: 70px 80px 90px 80px;
-    padding-top: 70px;
+    padding-top: 40px;
     padding-bottom: 90px;
+    padding-left: 80px;
+    padding-right: 80px;
 
     &__inner{
         display: flex;
@@ -432,7 +444,7 @@
 
 
 .sign-up-game{
-    padding: 60px 0;
+    padding: 30px 0 50px 0;
 
     .section-title{
         margin-bottom: 0;
@@ -556,6 +568,136 @@
     }
 }
 
+.tourney{
+    padding: 50px 0;
+
+    .section-title{
+        font-size: 36px;
+    }
+
+    &__table{
+        margin-bottom: 70px;
+        min-width: 100%;
+        text-align: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-collapse: collapse;
+        display: block;
+
+        tr{
+            border-bottom: 1px solid #7876a6;
+        }
+        th,td{
+            display: inline-block;
+        }
+        th{
+            font-size: 20px;
+            padding: 18px 0;
+            font-weight: 400;
+
+            &:nth-child(1){
+                width: 30px;
+            }
+            &:nth-child(2){
+                width: 265px;
+            }
+            &:nth-child(3){
+                width: 285px;
+            }
+            &:nth-child(4){
+                width: 215px;
+            }
+            &:nth-child(5){
+                width: 185px;
+            }
+            &:nth-child(6){
+                width: 205px;
+            }
+        }
+        td{
+            font-size: 23px;
+            font-weight: bold;
+            padding: 18px 0;
+            vertical-align: baseline;
+            img{
+                border-radius: 50%;
+                height: 63px;
+                width: 63px;
+                object-fit: cover;
+                vertical-align: middle;
+                margin-right: 20px;
+            }
+
+            &:nth-child(1){
+                width: 45px;
+            }
+            &:nth-child(2){
+                width: 265px;
+            }
+            &:nth-child(3){
+                width: 285px;
+            }
+            &:nth-child(4){
+                width: 215px;
+            }
+            &:nth-child(5){
+                width: 185px;
+            }
+            &:nth-child(6){
+                width: 205px;
+            }
+        }
+    }
+}
+
+.contacts{
+    padding-bottom: 100px;
+    color: black;
+    font-weight: bold;
+
+    &__body{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    &__item{
+        flex: 33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .icon{
+            margin-bottom: 20px;
+        }
+
+        .link{
+            font-size: 20px;
+            color: black;
+
+            &:hover{
+                color: $gradient-from;
+            }
+        }
+        .mobile{
+            color: black;  
+        }
+        .mail{
+            color: #4fb1e8;
+        }
+
+        .socials{
+            margin-top: 8px;
+        }
+        .socials svg{
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
+
 /*RESPONSIVE*/
 @media(max-width: 1400px)
 {
@@ -580,6 +722,10 @@
         .nav{
             margin-left: auto;
         }
+    }
+
+    .header.with-city .nav{
+        order: 2;
     }
     .nav ul li{
         margin-right: 15px;
@@ -608,6 +754,15 @@
             border-top: 18px solid transparent;
             border-bottom: 18px solid transparent;
         }
+    }
+
+    .header.with-city .logo{
+        margin-right: 0;
+    }
+
+    .header .city{
+        padding-top: 28px;
+        padding-bottom: 28px;
     }
 
     .games__statistic{
@@ -651,6 +806,10 @@
                 margin: 10px 0;
             }
         }
+
+        .link{
+            color: white !important;
+        }
     }
     
 
@@ -685,6 +844,23 @@
     .container
     {
         max-width: 576px;
+    }
+
+    .header{
+        .logo{
+            margin-right: auto!important;
+        }
+        .city{
+            order: 2;
+            padding-left: 0;
+            padding-right: 45px;
+
+            &::after{
+                width: 1000%;
+                right: 21px;
+                left: auto;
+            }
+        }
     }
 
     .intro .prizes__list{
@@ -748,6 +924,10 @@
         width: 40px;
     }
 
+    .contacts__item{
+        flex: 50%;
+    }
+
     .footer{
         padding-top: 30px;
         &__list{
@@ -787,8 +967,38 @@
         margin-left: 0;
     }    
 
+    .header__top{
+        flex-wrap: nowrap;
+    }
     .header .login{
         margin-left: 30px;
+    }
+    .header.with-city {
+        .header__top{
+            flex-wrap: wrap;
+        }
+        .city{
+            order: 0;
+            flex: 50%;
+            text-align: center;
+        }
+        .logo{
+            flex: 50%;
+            padding-right: 0;
+        }
+        .login{
+            margin-right: auto;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        .burger{
+            
+            margin-top: 20px;
+        }
+    }
+
+    .section-title{
+        margin-bottom: 30px;
     }
 
     p{
@@ -797,6 +1007,7 @@
 
     .prizes__list .item{
         flex: 100%;
+        margin: 20px 0;
     }
 
     .reviews__img{
@@ -806,6 +1017,18 @@
 
     .leading__grid{
         grid-template-columns: 300px;
+    }
+
+    .contacts__item{
+        flex: 100%;
+        
+        &:not(:first-child){
+            margin-top: 25px;
+        }
+    }
+
+    .tourney{
+        padding: 20px 0;
     }
 }
 
