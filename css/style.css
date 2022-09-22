@@ -270,7 +270,7 @@ button:focus {
 .nav .link:last-child {
   margin-right: 0;
 }
-.nav .link:hover {
+.nav .link:hover, .nav .link:active {
   border-bottom: 3px solid #7876a6;
 }
 

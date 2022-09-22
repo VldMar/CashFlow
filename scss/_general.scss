@@ -278,7 +278,8 @@ button:focus {
             margin-right: 0;
         }
 
-        &:hover{
+        &:hover,
+        &:active{
             border-bottom: 3px solid $logo-span-back;
         }
     }
