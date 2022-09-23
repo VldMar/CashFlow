@@ -143,6 +143,7 @@ button:focus {
   background-color: #1e0b29;
 }
 .header .logo {
+  min-height: 85px;
   padding: 20px 20px 20px 0;
 }
 .header .logo::after {
@@ -167,10 +168,10 @@ button:focus {
   margin-left: auto;
 }
 .header .city {
+  min-height: 85px;
   padding-left: 20px;
-  padding-right: 25px;
+  padding-right: 15px;
   padding-top: 32px;
-  padding-bottom: 32px;
   margin-right: auto;
   position: relative;
   z-index: 1;
@@ -190,8 +191,20 @@ button:focus {
 .header .city-link {
   color: #7876a6;
   border-bottom: 1px dashed #7876a6;
+  background: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-
+.header .city-link option {
+  padding: 0 10px;
+}
+.header .city select {
+  max-width: 80px;
+  white-space: break-spaces;
+}
 .header.with-city .nav ul li {
   margin-right: 20px;
 }
@@ -1164,10 +1177,10 @@ button:focus {
   }
   .header .logo {
     margin-right: auto !important;
+    padding-right: 65px;
   }
   .header .city {
     order: 2;
-    padding-left: 0;
     padding-right: 45px;
   }
   .header .city::after {
@@ -1261,17 +1274,27 @@ button:focus {
   .header .login {
     margin-left: 30px;
   }
+  .header .logo {
+    padding-right: 20px;
+  }
   .header.with-city .header__top {
     flex-wrap: wrap;
   }
   .header.with-city .city {
     order: 0;
     flex: 50%;
-    text-align: center;
+    text-align: right;
+    padding-right: 0;
+    height: 115px;
+  }
+  .header.with-city .city::after {
+    right: -15px;
+    transform: none;
   }
   .header.with-city .logo {
     flex: 50%;
     padding-right: 0;
+    height: 115px;
   }
   .header.with-city .login {
     margin-right: auto;
