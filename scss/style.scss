@@ -760,11 +760,6 @@
         margin-right: 0;
     }
 
-    .header .city{
-        padding-top: 28px;
-        padding-bottom: 28px;
-    }
-
     .games__statistic{
         margin: 50px 0;
         gap: 30px;
@@ -841,25 +836,21 @@
 }
 @media(max-width: 768px)
 {
-    .container
-    {
-        max-width: 576px;
+    .header.with-city .header__logo{
+        width: 100%;
     }
-
     .header{
+        .header__logo{
+           
+            margin-bottom: 10px;
+        }
         .logo{
             margin-right: auto!important;
-            padding-right: 65px;
+            flex: 50%;
+
         }
         .city{
-            order: 2;
-            padding-right: 45px;
-
-            &::after{
-                width: 1000%;
-                right: 21px;
-                left: auto;
-            }
+            flex: 50%;
         }
     }
 
@@ -898,16 +889,8 @@
             margin-bottom: 25px;
         }
     }
-    .reviews__carousel button.owl-prev,
-    .reviews__carousel button.owl-next{
-        //top: 300px !important;
-    }
     .reviews .section-title{
         margin-bottom: 30px;
-    }
-
-    .leading{
-
     }
 
     .owl-carousel .owl-nav button.owl-prev{
@@ -934,10 +917,11 @@
             .item{
                 flex: 100%;
                 margin-top: 20px;
+                text-align: left;
             }
 
             .item.last, .item.first{
-                text-align: center;
+                text-align: left;
             }
         }
     }
@@ -967,15 +951,16 @@
         margin-left: 0;
     }    
 
+    .header{
+        overflow: hidden;
+    }
     .header__top{
         flex-wrap: nowrap;
-    }
-    .header .login{
-        margin-left: 30px;
     }
     .header .logo{
         
         padding-right: 20px;
+        width: 150px;
     }
     .header.with-city {
         .header__top{
@@ -986,26 +971,15 @@
             flex: 50%;
             text-align: right;
             padding-right: 0;
-            height: 115px;
-
-            &::after{
-                right: -15px;
-                transform: none;
-            }
+            flex-direction: column;
         }
         .logo{
             flex: 50%;
             padding-right: 0;
-            height: 115px;
         }
         .login{
             margin-right: auto;
             margin-left: 0;
-            margin-top: 20px;
-        }
-        .burger{
-            
-            margin-top: 20px;
         }
     }
 
@@ -1044,13 +1018,16 @@
     }
 }
 
-@media (max-width: 310px)
+@media (max-width: 330px)
 {
     .header__top{
         flex-wrap: wrap;
     }
     .header .login{
         margin-left: 0;
+    }
+    .header__top{
+        flex-wrap: wrap;
     }
     .leading__grid{
         grid-template-columns: 100%;

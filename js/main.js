@@ -5,6 +5,19 @@ $(document).ready(function()
     $('.burger').click(onBurgerClick);
     $('.burger close').click(onBurgerClick);
 
+    const dropDownClickEventHandler = () => 
+    {
+        $('.dropdown-selector ul').toggleClass('show');
+
+    };
+
+    $('.dropdown-select').click(dropDownClickEventHandler)
+    $('.dropdown__item').click(function(e){
+        e.preventDefault();
+        console.log($(this).text())
+        $('.dropdown-select').text($(this).text());
+        dropDownClickEventHandler();
+    });
 
 
     $('.games__carousel').owlCarousel({
