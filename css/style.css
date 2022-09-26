@@ -157,6 +157,8 @@ button:focus {
   pointer-events: none;
   opacity: 0;
   transition: all 0.4s ease;
+  left: -100%;
+  text-align: left;
 }
 .dropdown-selector ul li {
   margin: 5px 0px;
@@ -203,6 +205,7 @@ button:focus {
   justify-content: center;
   align-items: center;
   width: 230px;
+  z-index: 100;
 }
 .header__logo .city::after {
   content: "";
@@ -1303,11 +1306,14 @@ button:focus {
     width: 100%;
     margin-left: 0;
   }
-  .header {
-    overflow: hidden;
-  }
   .header__top {
     flex-wrap: nowrap;
+  }
+  .header__logo::after {
+    right: 13px;
+  }
+  .header__logo .city::after {
+    left: -13px;
   }
   .header .logo {
     padding-right: 20px;

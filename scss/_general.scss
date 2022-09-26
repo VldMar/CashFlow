@@ -147,6 +147,8 @@ button:focus {
         pointer-events: none;
         opacity: 0;
         transition: all 0.4s ease;
+        left: -100%;
+        text-align: left;
 
         li{
             margin: 5px 0px;
@@ -202,6 +204,7 @@ button:focus {
             justify-content: center;
             align-items: center;
             width: 230px;
+            z-index: 100;
     
             &::after{
                 content: "";

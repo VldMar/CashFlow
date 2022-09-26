@@ -727,6 +727,7 @@
     .header.with-city .nav{
         order: 2;
     }
+
     .nav ul li{
         margin-right: 15px;
     }
@@ -951,11 +952,14 @@
         margin-left: 0;
     }    
 
-    .header{
-        overflow: hidden;
-    }
     .header__top{
         flex-wrap: nowrap;
+    }
+    .header__logo::after{
+        right: 13px;
+    }
+    .header__logo .city::after{
+        left: -13px;
     }
     .header .logo{
         
